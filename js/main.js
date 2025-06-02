@@ -76,20 +76,20 @@
 
 
     // Modal Video
-    $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
+    const videoModal = document.getElementById('videoModal');
+    const video = document.getElementById('video');
 
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
+    videoModal.addEventListener('show.bs.modal', (event) => {
+        const button = event.relatedTarget;
+        const videoSrc = button.getAttribute('data-video');
+        video.querySelector('source').setAttribute('src', videoSrc);
+        video.load();
+        video.play();
+    });
 
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
+    videoModal.addEventListener('hidden.bs.modal', () => {
+        video.pause();
+        video.currentTime = 0;
     });
 
 
