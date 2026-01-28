@@ -542,10 +542,50 @@
                         <h5 class="modal-title" id="itemName">Select Item</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
                         <div class="mb-4">
                             <p class="text-muted mb-2" id="itemDesc">Item description</p>
-                            <h4 class="text-primary">Price: <span id="itemPrice">R0</span></h4>
+                            <h4 class="text-primary">Base Price: <span id="itemPrice">R0</span></h4>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label"><strong>Item Type</strong></label>
+                            <div class="d-grid gap-2">
+                                <div class="form-check">
+                                    <input class="form-check-input item-type" type="radio" name="itemType" value="Just Jaffel" id="typeJaffel" checked onchange="updatePrice()">
+                                    <label class="form-check-label" for="typeJaffel">
+                                        🧇 Just the Jaffel (Base Price)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input item-type" type="radio" name="itemType" value="Meal" id="typeMeal" onchange="updatePrice()">
+                                    <label class="form-check-label" for="typeMeal">
+                                        🍽️ Meal (Jaffel + Drink + Side) - Add R25
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4" id="chipsSection" style="display: none;">
+                            <label class="form-label"><strong>Add Chips?</strong></label>
+                            <div class="d-grid gap-2">
+                                <div class="form-check">
+                                    <input class="form-check-input chips-option" type="radio" name="chips" value="None" id="chipsNone" checked>
+                                    <label class="form-check-label" for="chipsNone">
+                                        ❌ No Chips
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input chips-option" type="radio" name="chips" value="Medium" id="chipsMedium" onchange="updatePrice()">
+                                    <label class="form-check-label" for="chipsMedium">
+                                        🍟 Medium Chips - Add R15
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input chips-option" type="radio" name="chips" value="Large" id="chipsLarge" onchange="updatePrice()">
+                                    <label class="form-check-label" for="chipsLarge">
+                                        🍟 Large Chips - Add R25
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         <div class="mb-4">
                             <label class="form-label"><strong>Spice Level</strong></label>
@@ -583,6 +623,9 @@
                                 <input type="number" class="form-control text-center" id="itemQuantity" value="1" min="1" style="max-width: 80px;">
                                 <button class="btn btn-outline-secondary" type="button" onclick="increaseQty()">+</button>
                             </div>
+                        </div>
+                        <div class="mb-4 p-3 bg-light rounded">
+                            <h5 class="text-primary mb-0">Total Price: <span id="totalItemPrice">R0</span></h5>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -1003,20 +1046,64 @@
         let currentItem = null;
 
         function openItemModal(name, price, description) {
-            currentItem = { name, price, description };
+            currentItem = { name, basePrice: price, description };
             document.getElementById('itemName').textContent = name;
             document.getElementById('itemDesc').textContent = description;
             document.getElementById('itemPrice').textContent = 'R' + price;
             document.getElementById('itemQuantity').value = 1;
+            
+            // Reset item type to "Just Jaffel"
+            document.getElementById('typeJaffel').checked = true;
+            document.getElementById('typeMeal').checked = false;
+            document.getElementById('chipsSection').style.display = 'none';
+            document.getElementById('chipsNone').checked = true;
+            
+            // Reset spice level to Mild
             document.querySelector('input[name="spiceLevel"][value="Mild"]').checked = true;
+            
+            updatePrice();
             
             const itemModal = new bootstrap.Modal(document.getElementById('itemModal'));
             itemModal.show();
         }
 
+        function updatePrice() {
+            const basePrice = currentItem.basePrice;
+            const itemType = document.querySelector('input[name="itemType"]:checked').value;
+            const chips = document.querySelector('input[name="chips"]:checked').value;
+            const quantity = parseInt(document.getElementById('itemQuantity').value) || 1;
+            
+            let addOnPrice = 0;
+            let description = itemType;
+            
+            // Show/hide chips section based on item type
+            if (itemType === 'Meal') {
+                document.getElementById('chipsSection').style.display = 'block';
+                addOnPrice += 25; // Meal surcharge
+                
+                if (chips === 'Medium') {
+                    addOnPrice += 15;
+                    description += ' + Chips Medium';
+                } else if (chips === 'Large') {
+                    addOnPrice += 25;
+                    description += ' + Chips Large';
+                }
+            } else {
+                document.getElementById('chipsSection').style.display = 'none';
+                document.getElementById('chipsNone').checked = true;
+            }
+            
+            const itemPrice = basePrice + addOnPrice;
+            const totalPrice = itemPrice * quantity;
+            
+            document.getElementById('itemPrice').textContent = 'R' + basePrice;
+            document.getElementById('totalItemPrice').textContent = 'R' + totalPrice;
+        }
+
         function increaseQty() {
             const qty = document.getElementById('itemQuantity');
             qty.value = parseInt(qty.value) + 1;
+            updatePrice();
         }
 
         function decreaseQty() {
@@ -1024,21 +1111,44 @@
             if (parseInt(qty.value) > 1) {
                 qty.value = parseInt(qty.value) - 1;
             }
+            updatePrice();
         }
 
         function addToCart() {
             if (!currentItem) return;
 
+            const itemType = document.querySelector('input[name="itemType"]:checked').value;
+            const chips = document.querySelector('input[name="chips"]:checked').value;
             const spiceLevel = document.querySelector('input[name="spiceLevel"]:checked').value;
             const quantity = parseInt(document.getElementById('itemQuantity').value);
+            
+            let priceAddOn = 0;
+            let description = itemType;
+            
+            if (itemType === 'Meal') {
+                priceAddOn += 25;
+                if (chips === 'Medium') {
+                    priceAddOn += 15;
+                    description += ' + Chips Medium';
+                } else if (chips === 'Large') {
+                    priceAddOn += 25;
+                    description += ' + Chips Large';
+                }
+            }
+            
+            const finalPrice = currentItem.basePrice + priceAddOn;
 
             const cartItem = {
                 id: Date.now(),
                 name: currentItem.name,
-                price: currentItem.price,
+                basePrice: currentItem.basePrice,
+                itemType: itemType,
+                chips: chips === 'None' ? null : chips,
+                finalPrice: finalPrice,
                 spiceLevel: spiceLevel,
                 quantity: quantity,
-                subtotal: currentItem.price * quantity
+                subtotal: finalPrice * quantity,
+                description: description
             };
 
             cart.push(cartItem);
@@ -1047,7 +1157,7 @@
 
             // Close modal and show success message
             bootstrap.Modal.getInstance(document.getElementById('itemModal')).hide();
-            showNotification(`${currentItem.name} added to cart!`);
+            showNotification(`${currentItem.name} (${description}) added to cart!`);
         }
 
         function removeFromCart(itemId) {
@@ -1091,15 +1201,27 @@
             let totalPrice = 0;
             cartItems.innerHTML = cart.map(item => {
                 totalPrice += item.subtotal;
+                let itemDescription = item.name;
+                
+                // Build item description with options
+                if (item.itemType === 'Meal') {
+                    itemDescription += ' + Meal';
+                    if (item.chips) {
+                        itemDescription += ` + Chips ${item.chips}`;
+                    }
+                } else {
+                    itemDescription += ' + Just Jaffel';
+                }
+                
                 return `
                     <div class="card mb-3 border-light">
                         <div class="card-body">
                             <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <h6 class="card-title mb-1">${item.name}</h6>
-                                    <small class="text-muted">Spice: ${item.spiceLevel}</small>
+                                <div class="col-md-5">
+                                    <h6 class="card-title mb-1">${itemDescription}</h6>
+                                    <small class="text-muted">🌶️ ${item.spiceLevel}</small>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <div class="input-group input-group-sm">
                                         <button class="btn btn-outline-secondary" type="button" onclick="updateCartItemQty(${item.id}, ${item.quantity - 1})">−</button>
                                         <input type="number" class="form-control text-center" value="${item.quantity}" disabled style="max-width: 50px;">
@@ -1107,6 +1229,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2 text-end">
+                                    <small class="text-muted">R${item.finalPrice}</small><br>
                                     <strong>R${item.subtotal}</strong>
                                 </div>
                                 <div class="col-md-1 text-end">
