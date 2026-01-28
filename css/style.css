@@ -477,3 +477,21 @@
     padding-right: 0;
     border-right: none;
 }
+
+
+/*** Menu Item Styling ***/
+.menu-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.menu-item:hover {
+    background-color: rgba(254, 161, 22, 0.1);
+    transform: translateY(-2px);
+}
+
+.menu-item div {
+    cursor: pointer;
+}

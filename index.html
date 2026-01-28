@@ -46,9 +46,9 @@
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
+                <a href="" class="navbar-brand p-0 d-flex align-items-center">
+                    <img src="img/logo-tag.jpg" alt="Logo" style="height: 50px; margin-right: 10px;">
                     <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Lavish Bites</h1>
-                    <img src="img/logo-tag.jpg" alt="Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -57,9 +57,13 @@
                     <div class="navbar-nav ms-auto py-0 pe-4">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="menu.html" class="nav-item nav-link">Menu</a>
-                        
                     </div>
-                    <a href="" class="btn btn-primary py-2 px-4">Order now</a>
+                    <button class="btn btn-outline-light position-relative me-2" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fa fa-shopping-cart"></i> Cart
+                        <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge bg-danger d-none">0</span>
+                    </button>
+                    <a href="#orderForm" class="btn btn-primary py-2 px-4">Order Online</a>
+                    <a href="#chefForm" class="btn btn-warning py-2 px-4 ms-2">Hire a Chef</a>
                 </div>
             </nav>
 
@@ -75,7 +79,7 @@
                                 Today, Lavish Bites serves up hearty, flame-grilled meals that deliver real flavour, real portions, and real value — just like we did from the start. We're here for the families, the flavour chasers, and everyone who knows that great food doesn’t need electricity — just heart.
                                 
                                 🔥 Lavish Bites — Fire-Cooked. Family-Focused. Flavour-Filled.</p>
-                            <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a>
+                            <a href="#orderForm" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Order Online</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                             <img class="img-fluid" src="img/hero.png" alt="">
@@ -178,7 +182,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Order now</a>
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="#orderForm">Order Now</a>
                     </div>
                 </div>
             </div>
@@ -226,7 +230,7 @@
                     <div class="tab-content">
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Boerewors Roll', 45, 'Traditional flame-grilled boerewors in a fresh roll with onions and sauce')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -238,7 +242,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Breakfast Steak & Eggs', 85, 'Grilled beef steak served with eggs, toast, and grilled tomato')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -250,7 +254,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Bacon & Egg Roll', 50, 'Crispy bacon and fried eggs in a soft roll with cheese')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -262,7 +266,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Pap & Wors', 55, 'Creamy pap served with grilled boerewors and chakalaka')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -274,7 +278,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Grilled Chicken Breakfast', 70, 'Marinated chicken pieces grilled to perfection with toast')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -286,7 +290,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Vetkoek & Mince', 40, 'Golden fried vetkoek filled with spiced beef mince')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -298,7 +302,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Full Braai Breakfast', 95, 'Steak, eggs, boerewors, bacon, tomato, and toast')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -310,7 +314,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Chicken Livers & Pap', 60, 'Spicy peri-peri chicken livers served with soft pap')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -326,7 +330,7 @@
                         </div>
                         <div id="tab-2" class="tab-pane fade show p-0">
                             <div class="row g-4">
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Flame-Grilled Chicken', 85, 'Half chicken marinated and grilled, served with sides')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -338,7 +342,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Beef Steak & Chips', 110, '300g prime beef steak with chips and grilled vegetables')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -350,7 +354,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Boerewors & Pap', 75, 'Traditional boerewors coil with pap, gravy, and chakalaka')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -362,7 +366,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Pork Chops', 95, '2 Juicy grilled pork chops with your choice of sides')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -374,7 +378,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Mixed Braai Platter', 130, 'Chicken, steak, wors, and chops with salad and pap')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -386,7 +390,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Lamb Chops', 145, '4 Premium lamb chops seasoned and flame-grilled')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -398,7 +402,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Grilled Fish & Chips', 100, 'Fresh fish fillet grilled to perfection with chips')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -410,7 +414,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Spicy Wings Platter', 70, '12 Spicy peri-peri chicken wings with dipping sauce')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -426,7 +430,7 @@
                         </div>
                         <div id="tab-3" class="tab-pane fade show p-0">
                             <div class="row g-4">
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('T-Bone Steak', 155, '500g premium T-bone grilled to your liking with sides')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -438,7 +442,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Full Chicken', 140, 'Whole flame-grilled chicken with pap and salad')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-2.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -450,7 +454,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Rib & Chips', 165, 'Slow-grilled ribs glazed with BBQ sauce')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-3.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -462,7 +466,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Family Braai Platter', 450, 'Feeds 4-6: Mixed meats, sides, salads, and pap')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-4.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -474,7 +478,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Rump Steak', 135, '400g tender rump with mushroom sauce and veggies')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-5.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -486,7 +490,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Sosaties', 90, 'Traditional Cape Malay skewers with yellow rice')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-6.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -498,7 +502,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Surf & Turf', 185, 'Steak and prawns grilled with garlic butter')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-7.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -510,7 +514,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 menu-item" onclick="openItemModal('Mutton Curry & Rice', 95, 'Slow-cooked mutton curry with aromatic spices')">
                                     <div class="d-flex align-items-center">
                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-8.jpg" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
@@ -530,6 +534,98 @@
         </div>
         <!-- Menu End -->
 
+        <!-- Item Selection Modal -->
+        <div class="modal fade" id="itemModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="itemName">Select Item</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-4">
+                            <p class="text-muted mb-2" id="itemDesc">Item description</p>
+                            <h4 class="text-primary">Price: <span id="itemPrice">R0</span></h4>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label"><strong>Spice Level</strong></label>
+                            <div class="d-grid gap-2">
+                                <div class="form-check">
+                                    <input class="form-check-input spice-option" type="radio" name="spiceLevel" value="Mild" id="spiceMild" checked>
+                                    <label class="form-check-label" for="spiceMild">
+                                        🌶️ Mild
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input spice-option" type="radio" name="spiceLevel" value="Hot" id="spiceHot">
+                                    <label class="form-check-label" for="spiceHot">
+                                        🌶️🌶️ Hot
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input spice-option" type="radio" name="spiceLevel" value="Spicy" id="spiceSpicy">
+                                    <label class="form-check-label" for="spiceSpicy">
+                                        🌶️🌶️🌶️ Spicy
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input spice-option" type="radio" name="spiceLevel" value="Out of Town" id="spiceOOT">
+                                    <label class="form-check-label" for="spiceOOT">
+                                        🔥 Out of Town
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label"><strong>Quantity</strong></label>
+                            <div class="input-group">
+                                <button class="btn btn-outline-secondary" type="button" onclick="decreaseQty()">−</button>
+                                <input type="number" class="form-control text-center" id="itemQuantity" value="1" min="1" style="max-width: 80px;">
+                                <button class="btn btn-outline-secondary" type="button" onclick="increaseQty()">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Modal -->
+        <div class="modal fade" id="cartModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">🛒 Shopping Cart</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="cartItems" class="mb-4">
+                            <p class="text-muted text-center py-5">Your cart is empty</p>
+                        </div>
+                        <div class="row" id="cartSummary" style="display: none;">
+                            <div class="col-12">
+                                <hr>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Subtotal:</span>
+                                    <span id="subtotal">R0</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5>Total:</h5>
+                                    <h5 class="text-primary" id="cartTotal">R0</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                        <button type="button" class="btn btn-primary" onclick="proceedToCheckout()">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Reservation Start -->
         <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
@@ -543,47 +639,50 @@
                 </div>
                 <div class="col-md-6 bg-dark d-flex align-items-center">
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Special Request</h5>
-                        <h1 class="text-white mb-4">Order now</h1>
-                        <form>
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Ready to Order?</h5>
+                        <h1 class="text-white mb-4">Place Your Order</h1>
+                        <form id="orderForm">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
+                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Delivery Date & Time" data-target="#date3" data-toggle="datetimepicker" required />
+                                        <label for="datetime">Delivery Date & Time</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select" id="select1">
-                                          <option value="1">Platter for 10</option>
-                                          <option value="2">Platter for 20</option>
-                                          <option value="3">Platter for 30</option>
-                                          <option value="4">Platter for 50</option>
+                                        <select class="form-select" id="select1" required>
+                                          <option value="10">Platter for 10 - R1,500</option>
+                                          <option value="20">Platter for 20 - R3,000</option>
+                                          <option value="30">Platter for 30 - R4,500</option>
+                                          <option value="50">Platter for 50 - R7,500</option>
                                         </select>
-                                        <label for="select1">Catering Size</label>
+                                        <label for="select1">Select Platter Size</label>
                                       </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Get in Touch</label>
+                                        <textarea class="form-control" placeholder="Special dietary requirements or custom requests" id="message" style="height: 100px"></textarea>
+                                        <label for="message">Special Requests</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Proceed to Secure Payment</button>
+                                </div>
+                                <div class="col-12">
+                                    <small class="text-white">💳 Secure Payment: Cards, EFT, Mobile Money | 🚚 Fast Delivery Available</small>
                                 </div>
                             </div>
                         </form>
@@ -591,6 +690,100 @@
                 </div>
             </div>
         </div>
+
+        <!-- Hire a Chef Section Start -->
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id="chefForm">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="rounded bg-light p-4">
+                                    <h5 class="mb-3">🎉 Hire Our Chef for Your Special Event</h5>
+                                    <p class="mb-2">✓ Expert braai masters with years of experience</p>
+                                    <p class="mb-2">✓ Customized menus for your guest count & preferences</p>
+                                    <p class="mb-2">✓ Professional service & presentation</p>
+                                    <p class="mb-2">✓ Corporate events, weddings, family gatherings</p>
+                                    <p class="mb-0">✓ All equipment & ingredients provided</p>
+                                </div>
+                            </div>
+                            <div class="col-12 wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="rounded bg-light p-4">
+                                    <h5 class="mb-3">📞 Quick Booking Process</h5>
+                                    <p class="mb-2">1. Fill out the form →</p>
+                                    <p class="mb-2">2. Chat with our team on WhatsApp</p>
+                                    <p class="mb-2">3. Confirm details & pricing</p>
+                                    <p class="mb-0">4. Enjoy your perfectly catered event! 🎊</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="mb-4">Let's Make Your Event Unforgettable</h3>
+                        <form id="chefHireForm">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="chefName" placeholder="Your Name" required>
+                                        <label for="chefName">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="chefEmail" placeholder="Your Email" required>
+                                        <label for="chefEmail">Email Address</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="chefPhone" placeholder="Your Phone" required>
+                                        <label for="chefPhone">Phone Number</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="chefGuests" placeholder="Number of Guests" min="10" required>
+                                        <label for="chefGuests">Number of Guests</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="chefDate" placeholder="Event Date" required>
+                                        <label for="chefDate">Event Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="chefEventType" required>
+                                            <option value="">Select Event Type</option>
+                                            <option value="Wedding">Wedding Catering</option>
+                                            <option value="Corporate">Corporate Event</option>
+                                            <option value="Birthday">Birthday Party</option>
+                                            <option value="Family">Family Gathering</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <label for="chefEventType">Type of Event</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Tell us about your event..." id="chefDetails" style="height: 100px" required></textarea>
+                                        <label for="chefDetails">Event Details & Special Requests</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-warning w-100 py-3" type="button" onclick="submitChefHireForm()">Contact Us on WhatsApp 💬</button>
+                                </div>
+                                <div class="col-12">
+                                    <small class="text-muted">We'll respond within 2 hours during business hours</small>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hire a Chef Section End -->
 
         <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -727,6 +920,11 @@
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/27123456789?text=Hello%20Lavish%20Bites%20I%20would%20like%20to%20order" class="btn btn-lg" style="background-color: #25D366; color: white; position: fixed; bottom: 90px; right: 20px; z-index: 99; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
+        </a>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -743,6 +941,215 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
+
+    <!-- Stripe Payment Integration -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Initialize Stripe (replace with your actual publishable key)
+        const stripe = Stripe('pk_test_your_publishable_key_here');
+
+        document.getElementById('orderForm')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Redirect to Stripe Checkout
+            const response = await fetch('create-checkout-session.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: new URLSearchParams({
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    datetime: document.getElementById('datetime').value,
+                    people: document.getElementById('select1').value,
+                    message: document.getElementById('message').value
+                })
+            });
+            
+            const session = await response.json();
+            await stripe.redirectToCheckout({sessionId: session.sessionId});
+        });
+
+        // Hire a Chef WhatsApp function
+        function submitChefHireForm() {
+            const name = document.getElementById('chefName').value;
+            const phone = document.getElementById('chefPhone').value;
+            const date = document.getElementById('chefDate').value;
+            const guests = document.getElementById('chefGuests').value;
+            const eventType = document.getElementById('chefEventType').value;
+            const details = document.getElementById('chefDetails').value;
+
+            if (!name || !phone || !date || !guests || !eventType || !details) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const whatsappMessage = `Hi Lavish Bites! 🎉\n\nI'd like to hire a chef for my event:\n\n📋 Event Details:\n• Name: ${name}\n• Phone: ${phone}\n• Event Type: ${eventType}\n• Date: ${date}\n• Number of Guests: ${guests}\n\n📝 Details:\n${details}`;
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            window.open(`https://wa.me/27123456789?text=${encodedMessage}`, '_blank');
+        }
+
+        // ===== SHOPPING CART FUNCTIONALITY =====
+        let cart = JSON.parse(localStorage.getItem('lavishBitesCart')) || [];
+        let currentItem = null;
+
+        function openItemModal(name, price, description) {
+            currentItem = { name, price, description };
+            document.getElementById('itemName').textContent = name;
+            document.getElementById('itemDesc').textContent = description;
+            document.getElementById('itemPrice').textContent = 'R' + price;
+            document.getElementById('itemQuantity').value = 1;
+            document.querySelector('input[name="spiceLevel"][value="Mild"]').checked = true;
+            
+            const itemModal = new bootstrap.Modal(document.getElementById('itemModal'));
+            itemModal.show();
+        }
+
+        function increaseQty() {
+            const qty = document.getElementById('itemQuantity');
+            qty.value = parseInt(qty.value) + 1;
+        }
+
+        function decreaseQty() {
+            const qty = document.getElementById('itemQuantity');
+            if (parseInt(qty.value) > 1) {
+                qty.value = parseInt(qty.value) - 1;
+            }
+        }
+
+        function addToCart() {
+            if (!currentItem) return;
+
+            const spiceLevel = document.querySelector('input[name="spiceLevel"]:checked').value;
+            const quantity = parseInt(document.getElementById('itemQuantity').value);
+
+            const cartItem = {
+                id: Date.now(),
+                name: currentItem.name,
+                price: currentItem.price,
+                spiceLevel: spiceLevel,
+                quantity: quantity,
+                subtotal: currentItem.price * quantity
+            };
+
+            cart.push(cartItem);
+            localStorage.setItem('lavishBitesCart', JSON.stringify(cart));
+            updateCartUI();
+
+            // Close modal and show success message
+            bootstrap.Modal.getInstance(document.getElementById('itemModal')).hide();
+            showNotification(`${currentItem.name} added to cart!`);
+        }
+
+        function removeFromCart(itemId) {
+            cart = cart.filter(item => item.id !== itemId);
+            localStorage.setItem('lavishBitesCart', JSON.stringify(cart));
+            updateCartUI();
+        }
+
+        function updateCartItemQty(itemId, newQty) {
+            const item = cart.find(item => item.id === itemId);
+            if (item && newQty > 0) {
+                item.quantity = newQty;
+                item.subtotal = item.price * newQty;
+                localStorage.setItem('lavishBitesCart', JSON.stringify(cart));
+                updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            const cartBadge = document.getElementById('cartBadge');
+            const cartItems = document.getElementById('cartItems');
+            const cartSummary = document.getElementById('cartSummary');
+            const subtotal = document.getElementById('subtotal');
+            const cartTotal = document.getElementById('cartTotal');
+
+            // Update badge
+            if (cart.length > 0) {
+                cartBadge.textContent = cart.length;
+                cartBadge.classList.remove('d-none');
+            } else {
+                cartBadge.classList.add('d-none');
+            }
+
+            // Update cart items display
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-muted text-center py-5">Your cart is empty</p>';
+                cartSummary.style.display = 'none';
+                return;
+            }
+
+            let totalPrice = 0;
+            cartItems.innerHTML = cart.map(item => {
+                totalPrice += item.subtotal;
+                return `
+                    <div class="card mb-3 border-light">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h6 class="card-title mb-1">${item.name}</h6>
+                                    <small class="text-muted">Spice: ${item.spiceLevel}</small>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="input-group input-group-sm">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="updateCartItemQty(${item.id}, ${item.quantity - 1})">−</button>
+                                        <input type="number" class="form-control text-center" value="${item.quantity}" disabled style="max-width: 50px;">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="updateCartItemQty(${item.id}, ${item.quantity + 1})">+</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <strong>R${item.subtotal}</strong>
+                                </div>
+                                <div class="col-md-1 text-end">
+                                    <button class="btn btn-sm btn-outline-danger" onclick="removeFromCart(${item.id})">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Update summary
+            subtotal.textContent = 'R' + totalPrice;
+            cartTotal.textContent = 'R' + totalPrice;
+            cartSummary.style.display = 'block';
+        }
+
+        function proceedToCheckout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty');
+                return;
+            }
+
+            // Store cart data for checkout
+            localStorage.setItem('checkoutCart', JSON.stringify(cart));
+            
+            // Close cart modal and scroll to order form
+            bootstrap.Modal.getInstance(document.getElementById('cartModal')).hide();
+            document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+            
+            // Populate order form with cart info
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('message').value = cart.map(item => 
+                `${item.name} x${item.quantity} (${item.spiceLevel})`
+            ).join('\n');
+        }
+
+        function showNotification(message) {
+            const alert = document.createElement('div');
+            alert.className = 'alert alert-success position-fixed top-0 start-50 translate-middle-x mt-3';
+            alert.textContent = '✓ ' + message;
+            alert.style.zIndex = '9999';
+            alert.style.maxWidth = '400px';
+            document.body.appendChild(alert);
+            
+            setTimeout(() => {
+                alert.remove();
+            }, 3000);
+        }
+
+        // Load cart on page load
+        updateCartUI();
+    </script>
 
 </html>
