@@ -1,14 +1,28 @@
-# Lavish Bites - Complete Project Documentation
+# 🍽️ Lavish Bites - Premium South African Food Ordering Platform
 
-## 🔥 Welcome to Lavish Bites
+## ✨ Welcome to Lavish Bites
 
-An authentic South African braai catering and food delivery platform built with modern web technologies and full POPIA compliance.
+An authentic South African food ordering and catering platform with secure online payments, customizable meal options, and professional chef services. Built with modern web technologies and full POPIA compliance.
 
-**Website:** lavishbites.co.za (coming soon)
-**Business:** Premium fire-cooked meals + Chef-for-hire catering
-**Location:** Pretoria, South Africa
-**Phone:** +27 12 345 6789 (WhatsApp available)
-**Email:** info@lavishbites.co.za
+**🌐 Website:** lavishbites.co.za (coming soon)  
+**🎯 Business:** Premium food delivery + Chef-for-hire catering + Online ordering  
+**📍 Location:** Pretoria, South Africa  
+**☎️ Phone:** +27 12 345 6789 (WhatsApp available)  
+**📧 Email:** info@lavishbites.co.za  
+**⏰ Hours:** Mon-Sat 9AM-9PM | Sun 10AM-8PM  
+
+---
+
+## 🎉 What's New - Menu Enhancement v2.0
+
+✨ **Meal Customization System**
+- Choose between "Just Jaffel" or "Meal" (with drink & side)
+- Add chips in Medium (+R15) or Large (+R25) sizes
+- Dynamic pricing updates in real-time
+- Enhanced cart display showing all customization details
+
+✅ **Both index.html and menu.html updated**  
+✅ **Fully functional - ready for production**
 
 ---
 
@@ -51,89 +65,292 @@ lavish-bites/
 
 ---
 
-## ✨ Features
+## 🎯 Customer Guide - How to Use Lavish Bites
 
-### 🍖 Food Ordering
-- **24 Menu Items:** Authentic South African braai (breakfast, lunch, dinner)
-- **Shopping Cart:** localStorage-based cart with persistence
-- **Spice Levels:** Mild, Hot, Spicy, Out of Town options for each item
-- **Quantity Control:** Add/remove items and adjust quantities before checkout
-- **Price Display:** All prices in South African Rand (R)
+### 1️⃣ **Browse the Menu**
+- Visit [Menu Page](menu.html) or [Homepage](index.html)
+- Explore items by category: Breakfast, Lunch, Dinner
+- Click any item to see details and customization options
 
-### 💳 Secure Payments
-- **Stripe Integration:** PCI-DSS Level 1 compliant
-- **Multiple Methods:** Credit/Debit cards, EFT, Mobile Money
-- **Test Mode:** Pre-configured for testing
-- **Live Mode:** Ready for production after configuration
-- **SSL/HTTPS:** Encrypted payment transmission
+### 2️⃣ **Customize Your Order**
 
-### 👨‍🍳 Chef-for-Hire Service
-- **Event Catering:** Corporate events, weddings, family gatherings
-- **Custom Menus:** Tailored to guest count and preferences
-- **WhatsApp Booking:** Direct communication for inquiries
-- **Pricing:** R150 per person (customizable)
+**Choose Item Type:**
+- 🧇 **Just the Jaffel** - Base price (jaffel only)
+- 🍽️ **Meal** - Add R25 (includes jaffel + drink + side)
 
-### 📱 Mobile Optimization
-- **Responsive Design:** Works perfectly on phones, tablets, desktops
-- **Touch-Friendly:** Large buttons and form inputs
-- **Mobile Forms:** Optimized date picker and dropdown selects
-- **Progressive Enhancement:** Works with and without JavaScript
+**Add Extras (Meal only):**
+- 🍟 **Medium Chips** - Add R15
+- 🍟 **Large Chips** - Add R25
 
-### 🔐 Compliance & Security
-- **POPIA Act 2013:** Full compliance with South African data protection law
-- **Privacy Policy:** Transparent data collection and usage
-- **Terms & Conditions:** Clear e-commerce terms
-- **Payment Security:** SSL/HTTPS encryption, no card storage
-- **Consent Mechanisms:** Required acceptance before checkout
+**Select Spice Level:**
+- 🌶️ **Mild** - Perfect for mild palates
+- 🌶️🌶️ **Hot** - Good heat, flavorful
+- 🌶️🌶️🌶️ **Spicy** - Real kick of heat
+- 🔥 **Out of Town** - For spice warriors!
 
-### 💬 Customer Communication
-- **WhatsApp Integration:** Floating button with pre-filled messages
-- **Email Confirmations:** Automated order confirmations (setup required)
-- **Contact Forms:** Easy inquiry submission
-- **Hours Display:** Clear business hours on all pages
+**Adjust Quantity:**
+- Use + and − buttons
+- Total price updates automatically
+
+### 3️⃣ **Add to Cart**
+- Click "Add to Cart" button
+- See confirmation notification
+- View cart anytime by clicking the cart icon (🛒)
+
+### 4️⃣ **Review Your Order**
+- Click cart icon to open shopping cart modal
+- View all items with customizations
+- Adjust quantities if needed
+- See total price
+
+### 5️⃣ **Checkout**
+- Click "Proceed to Checkout"
+- Enter delivery details:
+  - Your name
+  - Email address
+  - Preferred delivery date/time
+  - Number of people
+  - Special requests (optional)
+- Accept terms and POPIA consent
+- Click "Proceed to Payment"
+
+### 6️⃣ **Secure Payment**
+- You'll be redirected to Stripe checkout
+- Choose payment method
+- Enter card/payment details securely
+- Confirm payment
+
+### 7️⃣ **Order Confirmation**
+- Receive success notification
+- Order details sent to your email
+- We'll contact you via WhatsApp for delivery
 
 ---
 
-## 🚀 Quick Start
+## 👨‍🍳 How to Book a Chef
 
-### Development (Local Testing)
+### Event Catering
 
-1. **Clone or Download Files**
-   ```bash
-   git clone https://github.com/yourusername/lavish-bites.git
-   cd lavish-bites
-   ```
+1. Scroll to "Hire a Chef" section on homepage
+2. Fill in event details:
+   - Your name & phone number
+   - Event type (Birthday, Wedding, Corporate, etc.)
+   - Date & number of guests
+   - Special requirements or menu preferences
+3. Click "Hire Chef"
+4. Your inquiry will be sent via WhatsApp
+5. Our team will contact you with custom quote
 
-2. **Local Web Server**
-   ```bash
-   # Python 3
-   python -m http.server 8000
-   
-   # Or PHP
-   php -S localhost:8000
-   ```
+### Chef Service Includes
+- Professional meal preparation
+- Service staff
+- Table setup & cleanup
+- Custom menu planning
+- Flexible timing
 
-3. **Open Browser**
-   ```
-   http://localhost:8000
-   ```
+---
 
-4. **Test Payment (Stripe Test Mode)**
-   - Card: 4242 4242 4242 4242
-   - Expiry: 12/25
-   - CVC: 123
+## 💳 Payment & Pricing
 
-### Production Deployment
+### Pricing Structure
 
-See **DEPLOYMENT_GUIDE.md** for complete instructions:
+| Item Type | Price |
+|-----------|-------|
+| Just Jaffel | Base Price (R89-R125) |
+| Meal | Base + R25 |
+| Meal + Chips Med | Base + R40 |
+| Meal + Chips Large | Base + R50 |
 
-1. Register domain (lavishbites.co.za)
-2. Set up hosting with PHP support
-3. Install SSL certificate (Let's Encrypt free)
-4. Configure Stripe live keys
-5. Upload files via FTP/Git
-6. Test payment flow
-7. Launch!
+### Accepted Payment Methods
+✅ Visa / Mastercard  
+✅ Debit Card  
+✅ Online Banking Transfer  
+✅ Mobile Wallets  
+
+### Payment Security
+🔒 **PCI-DSS Level 1** - Highest security standard  
+🛡️ **SSL Encrypted** - 256-bit encryption  
+🔐 **Stripe Processor** - Industry-leading payment handler  
+✅ **Zero Card Storage** - Cards never stored on our servers  
+
+---
+
+## ✨ Key Features
+
+### Shopping Cart
+- ✅ Persistent storage (survives browser refresh)
+- ✅ Real-time price calculations
+- ✅ Modify quantities anytime
+- ✅ Remove items easily
+- ✅ Shows all customization details
+
+### Meal Customization
+- ✅ Choose Jaffel or Meal option
+- ✅ Add chips with size selection
+- ✅ 4 spice level options
+- ✅ Quantity control
+- ✅ Dynamic total pricing
+
+### User Experience
+- ✅ Responsive mobile design
+- ✅ Fast page loading
+- ✅ Intuitive navigation
+- ✅ Real-time notifications
+- ✅ Clear visual feedback
+
+### Transparency
+- ✅ All prices visible upfront
+- ✅ No hidden fees
+- ✅ Automatic total calculation
+- ✅ Order summary before payment
+- ✅ Clear add-on pricing
+
+---
+
+## 🔐 Privacy & Compliance
+
+### POPIA Act 2013 Compliance
+We strictly comply with South Africa's Protection of Personal Information Act:
+
+✅ **Data Protection** - Your info is encrypted & secure  
+✅ **Limited Collection** - We only ask for necessary info  
+✅ **No Sharing** - Your data is never sold to third parties  
+✅ **Consent Required** - We ask permission before processing  
+✅ **Your Rights** - You can request to see or delete your data  
+
+### Important Documents
+- 📋 [Privacy Policy](privacy-policy.html) - How we handle your data
+- ⚖️ [Terms & Conditions](terms-conditions.html) - Legal agreement
+- 💳 [Payment Security](payment-security.html) - Payment details
+
+---
+
+## 📞 Contact & Support
+
+| Channel | Details |
+|---------|---------|
+| **WhatsApp** | [Message us](https://wa.me/27123456789) - Fastest! |
+| **Phone** | +27 12 345 6789 |
+| **Email** | info@lavishbites.co.za |
+| **Hours** | Mon-Sat: 9AM-9PM / Sun: 10AM-8PM |
+| **Location** | Pretoria, South Africa |
+
+---
+
+## ✨ Features
+
+### 🍖 Food Ordering
+- **24+ Menu Items:** Authentic South African jaffels, pap, livers, and more
+- **Smart Shopping Cart:** localStorage-based with persistent storage
+- **Meal Customization:** Choose item type, chips size, and spice level
+- **Quantity Control:** Easily adjust quantities before checkout
+- **Price Display:** Real-time totals in South African Rand (R)
+
+### 💳 Secure Payments
+- **Stripe Integration:** PCI-DSS Level 1 compliant
+- **Multiple Methods:** Credit/Debit cards, online banking
+- **Test Mode:** Pre-configured for safe testing
+- **Live Mode:** Ready for production deployment
+- **SSL/HTTPS:** Encrypted payment transmission
+
+### 👨‍🍳 Chef-for-Hire Service
+- **Event Catering:** Weddings, corporate events, parties
+- **Custom Menus:** Tailored to your needs
+- **WhatsApp Booking:** Direct messaging integration
+- **Professional Service:** Experienced South African chefs
+
+### 📱 Mobile Optimization
+- **Responsive Design:** Perfect on any device
+- **Touch-Friendly Interface:** Large buttons and inputs
+- **Fast Loading:** Optimized performance
+- **Progressive Enhancement:** Works without JavaScript
+
+### 🔐 Compliance & Security
+- **POPIA Compliant:** Full South African data protection
+- **Privacy Policy:** Transparent data handling
+- **Terms & Conditions:** Clear legal agreement
+- **Payment Security:** No card data stored locally
+- **Consent Mechanisms:** User opt-in required
+
+### 💬 Customer Communication
+- **WhatsApp Integration:** Instant chat access
+- **Real-time Notifications:** Order updates
+- **Contact Forms:** Easy inquiries
+- **Business Hours:** Clearly displayed
+
+---
+
+## 🚀 Getting Started
+
+### For Customers
+
+1. **Visit the Website**
+   - Browse menu on any page
+   - Click items to customize
+
+2. **Place an Order**
+   - Add items with your preferences
+   - Review cart
+   - Checkout securely
+
+3. **Receive Your Order**
+   - We'll contact you to confirm
+   - Delivery or pickup available
+   - Track via WhatsApp
+
+### For Developers
+
+**Local Development:**
+```bash
+# Clone repository
+git clone https://github.com/Antonio-el-Bear/lavish-bites.git
+cd lavish-bites
+
+# Start local server
+python -m http.server 8000
+# OR
+php -S localhost:8000
+
+# Open browser
+http://localhost:8000
+```
+
+**Test Stripe Payment:**
+- Card: `4242 4242 4242 4242`
+- Expiry: `12/25`
+- CVC: `123`
+
+**Production Deployment:**
+See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
+
+---
+
+## 📂 Project Structure
+
+```
+lavish-bites/
+├── index.html                 # Homepage with menu & orders
+├── menu.html                  # Dedicated menu page
+├── testimonial.html           # Customer testimonials
+├── privacy-policy.html        # POPIA privacy policy
+├── terms-conditions.html      # E-commerce terms
+├── payment-security.html      # Security & SSL info
+├── success.php                # Payment confirmation
+├── create-checkout-session.php # Stripe payment processing
+├── README.md                  # This file
+├── css/
+│   ├── bootstrap.min.css      # Bootstrap 5 framework
+│   └── style.css              # Custom styling
+├── js/
+│   └── main.js                # JavaScript functionality
+├── img/                       # Food images & assets
+├── lib/                       # Third-party libraries
+│   ├── animate/               # WOW.js animations
+│   ├── owlcarousel/           # Carousel component
+│   ├── tempusdominus/         # DateTime picker
+│   └── wow/                   # Scroll animations
+└── scss/                      # SCSS source files
+```
 
 ---
 
