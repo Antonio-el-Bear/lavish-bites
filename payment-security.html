@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Payment Security - Lavish Bites</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Payment Security Information - Lavish Bites" name="description">
+
+    <!-- Favicon -->
+    <link href="img/logo-tag.jpg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Customized Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .security-section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #FEA116;
+        }
+        
+        .security-section h3 {
+            color: #FEA116;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .security-section p {
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .security-badge {
+            display: inline-block;
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin: 10px 5px 10px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .security-badge i {
+            color: #28a745;
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .security-badge .badge-text {
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .security-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .security-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .security-list li {
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        
+        .trust-indicators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .trust-card {
+            background: white;
+            border: 2px solid #FEA116;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .trust-card i {
+            font-size: 2.5rem;
+            color: #FEA116;
+            margin-bottom: 10px;
+        }
+        
+        .trust-card h5 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .trust-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .security-section {
+                padding: 15px;
+            }
+            
+            .security-section h3 {
+                font-size: 1.2rem;
+            }
+            
+            .trust-indicators {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-lg-0 px-lg-5" style="background: #111;">
+        <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
+            <div class="d-flex align-items-center">
+                <img src="img/logo-tag.jpg" alt="Lavish Bites" height="50" style="margin-right: 10px;">
+                <span style="font-size: 1.3rem; font-weight: bold; color: #FEA116;">Lavish Bites</span>
+            </div>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="menu.html" class="nav-item nav-link">Menu</a>
+                <a href="testimonial.html" class="nav-item nav-link">Testimonials</a>
+                <a href="payment-security.html" class="nav-item nav-link active">Payment Security</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Security Content -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <h1 style="color: #FEA116; margin-bottom: 30px;">Payment Security & Data Protection</h1>
+                    
+                    <div style="background: #d4edda; border: 2px solid #28a745; padding: 20px; border-radius: 5px; margin-bottom: 30px;">
+                        <p style="color: #155724; margin: 0;">
+                            <i class="fas fa-shield-alt me-2"></i>
+                            <strong>Your payment information is protected by industry-leading security standards.</strong> We use Stripe, a PCI-DSS Level 1 certified payment processor, to ensure your card data is never stored on our servers.
+                        </p>
+                    </div>
+
+                    <h3 style="color: #FEA116; margin-top: 30px; margin-bottom: 20px;">Trust & Security Certifications</h3>
+                    <div class="trust-indicators">
+                        <div class="trust-card">
+                            <i class="fas fa-lock"></i>
+                            <h5>PCI-DSS Compliant</h5>
+                            <p>Level 1 Payment Card Industry Data Security Standard compliance through Stripe</p>
+                        </div>
+                        <div class="trust-card">
+                            <i class="fas fa-certificate"></i>
+                            <h5>SSL Encrypted</h5>
+                            <p>All data transmission secured with HTTPS SSL/TLS encryption (256-bit)</p>
+                        </div>
+                        <div class="trust-card">
+                            <i class="fas fa-credit-card"></i>
+                            <h5>Zero-Risk Payments</h5>
+                            <p>Fraud detection and chargeback protection included with all payments</p>
+                        </div>
+                        <div class="trust-card">
+                            <i class="fas fa-eye-slash"></i>
+                            <h5>Data Privacy</h5>
+                            <p>POPIA compliant - your data is protected under South African law</p>
+                        </div>
+                    </div>
+
+                    <div class="security-section">
+                        <h3>How Your Payment Information is Protected</h3>
+                        <div class="security-list">
+                            <ul>
+                                <li><strong>No Card Data Storage:</strong> Your credit/debit card information is never stored on Lavish Bites servers. Stripe handles all payment processing securely.</li>
+                                <li><strong>Tokenization:</strong> When you pay, your card is converted into a secure token used only for that transaction.</li>
+                                <li><strong>SSL/TLS Encryption:</strong> All data transmitted between your browser and our servers is encrypted using 256-bit SSL encryption.</li>
+                                <li><strong>Secure Payment Gateway:</strong> Stripe's infrastructure is PCI-DSS Level 1 certified, the highest security standard for payment processing.</li>
+                                <li><strong>Fraud Detection:</strong> Advanced fraud detection systems monitor all transactions for suspicious activity.</li>
+                                <li><strong>Regular Security Audits:</strong> Stripe undergoes regular third-party security audits and penetration testing.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="security-section">
+                        <h3>Payment Methods Supported</h3>
+                        <p>We accept the following secure payment methods:</p>
+                        <div class="security-list">
+                            <ul>
+                                <li><strong>Visa & Mastercard:</strong> Debit and credit cards processed through Stripe</li>
+                                <li><strong>Electronic Funds Transfer (EFT):</strong> Direct bank transfers with secure processing</li>
+                                <li><strong>Mobile Money:</strong> Support for mobile payment solutions</li>
+                            </ul>
+                        </div>
+                        <p>Each payment method is encrypted and authenticated before processing.</p>
+                    </div>
+
+                    <div class="security-section">
+                        <h3>Your Data & Privacy</h3>
+                        <p>Lavish Bites is committed to protecting your personal and payment information in compliance with the <strong>Protection of Personal Information Act (POPIA), 2013</strong>:</p>
+                        <div class="security-list">
+                            <ul>
+                                <li><strong>Data Minimization:</strong> We only collect information necessary to process your order</li>
+                                <li><strong>Purpose Limitation:</strong> Your data is used only for order fulfillment and customer service</li>
+                                <li><strong>Data Retention:</strong> Order data is retained for 3 years; payment data is not stored on our systems</li>
+                                <li><strong>Access Control:</strong> Strict access controls limit who can view customer information</li>
+                                <li><strong>Data Security:</strong> Multiple layers of security protect all stored customer data</li>
+                                <li><strong>Your Rights:</strong> You have the right to access, correct, or delete your personal information</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="security-section">
+                        <h3>Security Best Practices for You</h3>
+                        <p>While we protect your data, follow these best practices to ensure maximum security:</p>
+                        <div class="security-list">
+                            <ul>
+                                <li><strong>Use a Secure Connection:</strong> Only make payments when connected to a secure, private Wi-Fi network</li>
+                                <li><strong>Keep Your Browser Updated:</strong> Ensure your web browser is up-to-date with the latest security patches</li>
+                                <li><strong>Don't Share Card Details:</strong> Never share your full card number, CVV, or PIN via email or messages</li>
+                                <li><strong>Monitor Your Account:</strong> Regularly check your bank statements for unauthorized transactions</li>
+                                <li><strong>Use Strong Passwords:</strong> If creating an account, use a unique, strong password</li>
+                                <li><strong>Report Suspicious Activity:</strong> Contact us immediately if you notice unauthorized charges</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="security-section">
+                        <h3>Stripe Payment Security</h3>
+                        <p>Lavish Bites partners with <strong>Stripe</strong>, a leading global payment processor trusted by millions of businesses:</p>
+                        <div class="security-list">
+                            <ul>
+                                <li><strong>PCI-DSS Level 1 Certification:</strong> Stripe is independently audited and certified to the highest PCI compliance level</li>
+                                <li><strong>Advanced Fraud Detection:</strong> Machine learning algorithms detect and prevent fraudulent transactions</li>
+                                <li><strong>Secure API:</strong> Stripe's API uses OAuth authentication and encrypted tokens</li>
+                                <li><strong>Compliance:</strong> Stripe complies with GDPR, HIPAA, and other international data protection regulations</li>
+                                <li><strong>Transparency:</strong> Stripe provides clear documentation and responsible disclosure policies</li>
+                            </ul>
+                        </div>
+                        <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Learn more about Stripe's security: <a href="https://stripe.com/docs/security" target="_blank" style="color: #FEA116;">stripe.com/docs/security</a>
+                        </p>
+                    </div>
+
+                    <div class="security-section">
+                        <h3>HTTPS/SSL Security</h3>
+                        <p>All pages on lavishbites.co.za use HTTPS with SSL/TLS encryption:</p>
+                        <div class="security-list">
+                            <ul>
+                                <li><strong>256-bit Encryption:</strong> Industry-standard encryption protects all data in transit</li>
+                                <li><strong>Valid SSL Certificate:</strong> Our domain is verified and authenticated</li>
+                                <li><strong>Secure Lock Icon:</strong> Your browser displays a padlock icon in the address bar when on secure pages</li>
+                                <li><strong>Data Integrity:</strong> Encryption ensures no one can intercept or modify your information</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="security-section">
+                        <h3>Dispute Resolution & Refunds</h3>
+                        <p>Lavish Bites protects you with a fair and transparent dispute resolution process:</p>
+                        <div class="security-list">
+                            <ul>
+                                <li><strong>Order Verification:</strong> We verify all orders to prevent unauthorized transactions</li>
+                                <li><strong>Chargeback Protection:</strong> If you dispute a charge, Stripe's chargeback process ensures fair investigation</li>
+                                <li><strong>Full Refunds:</strong> If you cancel within our refund window, your money is fully refunded</li>
+                                <li><strong>Fraud Reimbursement:</strong> Unauthorized transactions are typically refunded within 5-7 business days</li>
+                                <li><strong>Customer Support:</strong> Our team is available via WhatsApp (+27 12 345 6789) to resolve payment issues quickly</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="security-section">
+                        <h3>What Information We Collect</h3>
+                        <p>During payment, we collect only the minimum information necessary:</p>
+                        <div class="security-list">
+                            <ul>
+                                <li><strong>Your Information:</strong> Name, email address, phone number, delivery address</li>
+                                <li><strong>Order Information:</strong> Items ordered, quantities, special requests</li>
+                                <li><strong>Payment Information:</strong> Securely processed through Stripe (never stored by us)</li>
+                            </ul>
+                        </div>
+                        <p style="margin-top: 15px;">This information is used only for order fulfillment and customer service. See our <a href="privacy-policy.html" style="color: #FEA116;">Privacy Policy</a> for more details.</p>
+                    </div>
+
+                    <div class="security-section">
+                        <h3>Reporting Security Issues</h3>
+                        <p>If you discover a security vulnerability or have concerns about our payment security, please report it to us immediately:</p>
+                        <ul style="margin: 15px 0; padding-left: 20px;">
+                            <li><strong>Email:</strong> <a href="mailto:security@lavishbites.co.za" style="color: #FEA116;">security@lavishbites.co.za</a></li>
+                            <li><strong>WhatsApp:</strong> <a href="https://wa.me/27123456789" style="color: #FEA116;">+27 12 345 6789</a></li>
+                        </ul>
+                        <p>We appreciate responsible disclosure and will address security concerns promptly.</p>
+                    </div>
+
+                    <div class="security-section" style="background: #e7f3ff; border-left-color: #0066cc;">
+                        <h3 style="color: #0066cc;">Your Trust is Our Priority</h3>
+                        <p>At Lavish Bites, protecting your information is not just a compliance requirement—it's a fundamental commitment to our customers. We continuously monitor our systems, stay updated on security threats, and implement industry best practices to ensure your payment information is always safe.</p>
+                        <p style="margin: 15px 0 0 0;">If you have any questions about our payment security practices, please <a href="https://wa.me/27123456789" style="color: #FEA116; font-weight: 600;">contact us via WhatsApp</a> or email <a href="mailto:info@lavishbites.co.za" style="color: #FEA116; font-weight: 600;">info@lavishbites.co.za</a>.</p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="bg-light p-4 rounded" style="position: sticky; top: 100px;">
+                        <h4 style="color: #FEA116; margin-bottom: 20px;"><i class="fas fa-shield-alt me-2"></i>Security Info</h4>
+                        
+                        <div style="background: #d4edda; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                            <p style="color: #155724; margin: 0; font-size: 0.9rem;">
+                                <i class="fas fa-check-circle me-2"></i> 100% Secure Payments
+                            </p>
+                        </div>
+
+                        <h5 style="color: #333; margin-bottom: 15px;">Security Certifications</h5>
+                        <ul style="list-style: none; padding: 0; color: #666; font-size: 0.9rem;">
+                            <li style="margin-bottom: 10px;">
+                                <i class="fas fa-check me-2" style="color: #28a745;"></i>
+                                PCI-DSS Level 1
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <i class="fas fa-check me-2" style="color: #28a745;"></i>
+                                SSL/TLS 256-bit
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <i class="fas fa-check me-2" style="color: #28a745;"></i>
+                                POPIA Compliant
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <i class="fas fa-check me-2" style="color: #28a745;"></i>
+                                Fraud Protection
+                            </li>
+                        </ul>
+
+                        <div class="mt-5 pt-4 border-top">
+                            <h5 style="color: #333; margin-bottom: 15px;">Trusted Payment Partner</h5>
+                            <div style="background: white; padding: 15px; border-radius: 5px; text-align: center;">
+                                <img src="https://stripe.com/img/about/press/brand/logo_landscape_black_sm.png" alt="Stripe" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+                                <p style="color: #666; font-size: 0.85rem; margin: 0;">
+                                    Secure payment processing by Stripe
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-top">
+                            <h5 style="color: #333; margin-bottom: 15px;">Quick Links</h5>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="privacy-policy.html" style="color: #FEA116; text-decoration: none;">
+                                        <i class="fas fa-chevron-right"></i> Privacy Policy
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="terms-conditions.html" style="color: #FEA116; text-decoration: none;">
+                                        <i class="fas fa-chevron-right"></i> Terms & Conditions
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html" style="color: #FEA116; text-decoration: none;">
+                                        <i class="fas fa-chevron-right"></i> Back to Home
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Lavish Bites</h4>
+                    <p style="color: #999;">Experience authentic South African braai at its finest. Premium fire-cooked meats and sides delivered to you.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="index.html">Home</a>
+                    <a class="btn btn-link" href="menu.html">Menu</a>
+                    <a class="btn btn-link" href="testimonial.html">Testimonials</a>
+                    <a class="btn btn-link" href="payment-security.html">Payment Security</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Pretoria, South Africa</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+27 12 345 6789</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@lavishbites.co.za</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Hours</h4>
+                    <p class="mb-2">Monday - Saturday: 09:00 - 21:00</p>
+                    <p class="mb-2">Sunday: 10:00 - 20:00</p>
+                    <p style="color: #999; font-size: 0.9rem; margin-top: 15px;">Available for catering and chef-for-hire services</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://wa.me/27123456789?text=Hi%20Lavish%20Bites!%20I%20would%20like%20to%20place%20an%20order."><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="text-light">
+                            &copy; 2024 <a class="text-light" href="#">Lavish Bites</a>. All Rights Reserved. |
+                            <a class="text-light" href="privacy-policy.html">Privacy Policy</a> |
+                            <a class="text-light" href="terms-conditions.html">Terms & Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" style="background: #FEA116;"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <link href="lib/waypoints/waypoints.min.js" rel="stylesheet">
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
